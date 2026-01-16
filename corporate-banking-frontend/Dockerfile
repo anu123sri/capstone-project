@@ -1,24 +1,18 @@
-# -------- Build stage --------
-FROM node:20-alpine AS build
-
+# -------- BUILD STAGE --------
+FROM node:18-alpine AS build
 WORKDIR /app
 
-# Copy package files first for better caching
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 
-# Copy source code
 COPY . .
+RUN npm run build -- --configuration production
 
-# Build the application
-RUN npm run build --configuration=production
-
-# -------- Runtime stage --------
+# -------- RUNTIME STAGE --------
 FROM nginx:alpine
+RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY dist/corporateUi /usr/share/nginx/html
+COPY --from=build /app/dist/corporateUi /usr/share/nginx/html
+
 EXPOSE 80
-
 CMD ["nginx", "-g", "daemon off;"]
-
-
