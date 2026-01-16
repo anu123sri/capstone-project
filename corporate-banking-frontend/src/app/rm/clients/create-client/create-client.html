@@ -1,0 +1,93 @@
+<mat-card class="client-card">
+
+  <h2>Create Client</h2>
+
+  <form (ngSubmit)="createClient()" #clientForm="ngForm">
+
+    <!-- Company Name -->
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Company Name</mat-label>
+      <input matInput
+             [(ngModel)]="client.companyName"
+             name="companyName"
+             required>
+    </mat-form-field>
+
+    <!-- Industry -->
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Industry</mat-label>
+      <input matInput
+             [(ngModel)]="client.industry"
+             name="industry"
+             required>
+    </mat-form-field>
+
+    <!-- Address -->
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Address</mat-label>
+      <input matInput
+             [(ngModel)]="client.address"
+             name="address">
+    </mat-form-field>
+
+    <h3>Primary Contact</h3>
+
+    <!-- Contact Name -->
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Contact Name</mat-label>
+      <input matInput
+             [(ngModel)]="client.contactName"
+             name="contactName"
+             required>
+    </mat-form-field>
+
+    <!-- Contact Email -->
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Email</mat-label>
+      <input matInput
+             type="email"
+             [(ngModel)]="client.contactEmail"
+             name="contactEmail"
+             required>
+    </mat-form-field>
+
+    <!-- Contact Phone -->
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Phone (10 digits)</mat-label>
+      <input matInput
+             [(ngModel)]="client.contactPhone"
+             name="contactPhone"
+             maxlength="10"
+             pattern="[0-9]{10}"
+             required>
+    </mat-form-field>
+
+    <!-- Annual Turnover -->
+    <mat-form-field appearance="outline" class="full">
+      <mat-label>Annual Turnover</mat-label>
+      <input matInput
+             type="number"
+             [(ngModel)]="client.annualTurnover"
+             name="annualTurnover"
+             min="1"
+             required>
+    </mat-form-field>
+
+    <!-- Documents Submitted -->
+    <mat-checkbox
+      [(ngModel)]="client.documentsSubmitted"
+      name="documentsSubmitted">
+      Documents Submitted
+    </mat-checkbox>
+
+    <br><br>
+
+    <button mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!clientForm.valid">
+      Create Client
+    </button>
+
+  </form>
+</mat-card>

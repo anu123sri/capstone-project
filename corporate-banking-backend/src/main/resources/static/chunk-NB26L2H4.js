@@ -1,0 +1,1 @@
+import{Ec as n,Hc as a,T as e,X as i}from"./chunk-6NNWKDWV.js";var o=class t{constructor(r){this.http=r}baseUrl=`${a.apiUrl}/rm/clients`;createClient(r){return this.http.post(this.baseUrl,r)}getClients(){return this.http.get(this.baseUrl)}static \u0275fac=function(s){return new(s||t)(i(n))};static \u0275prov=e({token:t,factory:t.\u0275fac,providedIn:"root"})};export{o as a};

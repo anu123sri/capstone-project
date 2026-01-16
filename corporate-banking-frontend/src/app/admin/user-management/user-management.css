@@ -1,0 +1,165 @@
+/* ================= PAGE LAYOUT ================= */
+
+.admin-container {
+  min-height: 100vh;
+  padding: 24px;
+
+  background-color: #f1f5f9; /* soft admin background */
+  
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 24px;
+}
+
+
+/* ================= CREATE USER CARD ================= */
+
+.create-user-card {
+  border-radius: 16px;
+  padding: 20px;
+  background: linear-gradient(180deg, #ffffff, #f6f9ff);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.create-user-card mat-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e3c72;
+}
+
+/* Button */
+.create-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* ================= USERS LIST ================= */
+
+.users-card {
+  border-radius: 16px;
+  padding: 20px;
+  background: #f8fafc;
+}
+
+.users-card mat-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* ================= USER GRID ================= */
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+/* ================= USER CARD ================= */
+
+.user-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= USER HEADER (ICON FIX) ================= */
+
+.user-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.user-avatar {
+  font-size: 42px;
+  color: #9aa4b2; /* soft neutral */
+}
+
+/* ================= USER TABLE ================= */
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table td {
+  padding: 6px 4px;
+  font-size: 13px;
+}
+
+.label {
+  font-weight: 600;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.row-icon {
+  font-size: 16px;
+  color: #888;
+}
+
+/* ================= ROLE BADGES ================= */
+
+.role-badge {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ADMIN */
+.role-admin {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+/* ANALYST */
+.role-analyst {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* RM */
+.role-rm {
+  background: #fff3e0;
+  color: #ef6c00;
+}
+
+/* ================= ROLE COLOR STRIP ================= */
+
+.user-card.admin {
+  border-top: 4px solid #1565c0;
+}
+
+.user-card.analyst {
+  border-top: 4px solid #2e7d32;
+}
+
+.user-card.rm {
+  border-top: 4px solid #ef6c00;
+}
+
+/* ================= TOGGLE COLORS ================= */
+
+.toggle-active {
+  --mdc-switch-selected-track-color: #2e7d32;
+  --mdc-switch-selected-handle-color: #2e7d32;
+}
+
+.toggle-inactive {
+  --mdc-switch-unselected-track-color: #c62828;
+  --mdc-switch-unselected-handle-color: #c62828;
+}

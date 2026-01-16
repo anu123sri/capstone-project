@@ -1,0 +1,74 @@
+<div class="page-container">
+
+  <!-- Page Title -->
+  <div class="page-title-wrapper">
+    <div class="page-title-pill">
+      All Credit Requests
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div class="grid" *ngIf="!loading && credits.length">
+
+    <div class="card" *ngFor="let c of credits">
+
+      <!-- Client ID -->
+      <div class="client-id">
+        Client ID: {{ c.clientId }}
+      </div>
+
+      <!-- Details -->
+      <div class="details">
+        <div><span>Amount:</span> ₹ {{ c.requestAmount }}</div>
+        <div><span>Tenure:</span> {{ c.tenureMonths }} months</div>
+        <div><span>Purpose:</span> {{ c.purpose }}</div>
+      </div>
+
+      <!-- Status -->
+      <div class="status-wrapper">
+        <span class="status-pill" [ngClass]="c.status">
+          {{ c.status }}
+        </span>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions" *ngIf="c.status === 'PENDING'">
+        <button class="approve" (click)="openModal(c.id, 'APPROVED')">
+          Approve
+        </button>
+        <button class="reject" (click)="openModal(c.id, 'REJECTED')">
+          Reject
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="!loading && !credits.length" class="empty">
+    No credit requests found.
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal-backdrop" *ngIf="showModal">
+  <div class="modal">
+    <h3>{{ selectedAction }} Credit</h3>
+
+    <textarea
+      placeholder="Enter remarks"
+      [(ngModel)]="remarks">
+    </textarea>
+
+    <div class="modal-actions">
+      <button
+        [disabled]="decisionLoading"
+        (click)="submitDecision()">
+        Confirm
+      </button>
+      <button class="cancel" (click)="closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>

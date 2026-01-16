@@ -1,0 +1,30 @@
+<div class="edit-wrapper">
+
+  <form class="edit-card" [formGroup]="clientForm" (ngSubmit)="updateClient()">
+
+    <h2>Edit Client</h2>
+
+    <div class="warning" *ngIf="isSubmitted">
+      ⚠️ Submitted clients cannot be edited.
+    </div>
+
+    <input placeholder="Company Name" formControlName="companyName" />
+    <input placeholder="Industry" formControlName="industry" />
+    <input placeholder="Address" formControlName="address" />
+
+    <input placeholder="Contact Name" formControlName="contactName" />
+    <input placeholder="Contact Email" formControlName="contactEmail" />
+    <input placeholder="Contact Phone" formControlName="contactPhone" />
+
+    <input type="number" placeholder="Annual Turnover" formControlName="annualTurnover" />
+
+    <button
+      type="submit"
+      class="update-btn"
+      [disabled]="clientForm.invalid || isSubmitted">
+      Update Client
+    </button>
+
+  </form>
+
+</div>

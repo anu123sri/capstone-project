@@ -1,0 +1,89 @@
+<div class="clients-page">
+
+  <!-- HEADER -->
+  <div class="clients-header">
+
+    <!-- Center title -->
+    <div class="page-title-pill">
+      Registered Clients
+    </div>
+
+    <!-- Right-side dropdown search -->
+    <div class="filter-dropdown">
+
+      <select [(ngModel)]="companyName">
+        <option value="">All Companies</option>
+        <option *ngFor="let c of clients$ | async" [value]="c.companyName">
+          {{ c.companyName }}
+        </option>
+      </select>
+
+      <select [(ngModel)]="industry">
+        <option value="">All Industries</option>
+        <option value="IT">IT</option>
+        <option value="Manufacturing">Manufacturing</option>
+        <option value="Textile">Textile</option>
+      </select>
+
+      <button mat-raised-button color="primary"
+              (click)="searchClients()">
+        Apply
+      </button>
+
+    </div>
+  </div>
+
+  <!-- CLIENT CARDS GRID -->
+  <div class="clients-grid">
+
+    <mat-card class="client-card"
+              *ngFor="let c of clients$ | async">
+
+      <!-- CARD HEADER -->
+      <div class="card-header">
+        <h3 class="company-name">{{ c.companyName }}</h3>
+
+        <button
+  class="edit-btn"
+  (click)="editClient(c)">
+  Edit
+</button>
+
+      </div>
+
+      <!-- CARD BODY -->
+      <div class="row">
+        <span class="label">Client ID</span>
+        <span class="value">{{ c.id }}</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Industry</span>
+        <span class="value">{{ c.industry }}</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Address</span>
+        <span class="value">{{ c.address }}</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Annual Turnover</span>
+        <span class="value">₹ {{ c.annualTurnover | number }}</span>
+      </div>
+
+      <div class="row">
+        <span class="label">Documents</span>
+        <span
+          class="status-badge"
+          [class.approved]="c.documentsSubmitted"
+          [class.pending]="!c.documentsSubmitted">
+          {{ c.documentsSubmitted ? 'Submitted' : 'Pending' }}
+        </span>
+      </div>
+
+    </mat-card>
+
+  </div>
+
+</div>

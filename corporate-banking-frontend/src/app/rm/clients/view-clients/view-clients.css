@@ -1,0 +1,204 @@
+/* ================= PAGE ================= */
+.clients-page {
+  padding: 24px 32px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* ================= HEADER ================= */
+/* ================= HEADER ================= */
+.clients-header {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+/* Centered title */
+.page-title-pill {
+  margin: 0 auto;
+  width: fit-content;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  padding: 12px 36px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Right-aligned dropdown filters */
+.filter-dropdown {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Dropdown styling */
+.filter-dropdown select {
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filter-dropdown select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.filter-dropdown button {
+  height: 36px;
+  border-radius: 8px;
+}
+
+
+/* ================= TITLE ================= */
+.page-title-pill {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  padding: 12px 32px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* ================= SEARCH BAR ================= */
+.search-bar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.search-bar input {
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  outline: none;
+  font-size: 14px;
+  min-width: 160px;
+  background: #fff;
+}
+
+.search-bar input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+}
+
+.search-bar button {
+  height: 36px;
+  border-radius: 8px;
+}
+
+
+/* ================= GRID ================= */
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+/* ================= CARD ================= */
+.client-card {
+  padding: 18px 20px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  border-left: 5px solid #2563eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= COMPANY NAME ================= */
+.company-name {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* ================= ROWS ================= */
+.row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  text-align: left;
+}
+
+/* ================= STATUS ================= */
+.status-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  width: fit-content;
+}
+
+/* APPROVED */
+.status-badge.approved {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+/* PENDING */
+.status-badge.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+/* Card header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Edit button */
+.edit-btn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: #1e40af;
+}
+
+

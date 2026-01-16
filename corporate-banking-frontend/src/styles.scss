@@ -1,0 +1,65 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+  margin: 0;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+/* Global login background */
+.login-container {
+  position: relative;
+  min-height: calc(100vh - 120px); /* header + footer */
+  background: url('./assets/image.png') center / cover no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* overlay */
+.login-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+.login-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* styles.scss */
+
+
+
+
+
+.mat-form-field {
+  background: #fafafa;
+
+  border-radius: 8px;
+}
+
+mat-sidenav.sidenav {
+  background: linear-gradient(
+    180deg,
+    #f5f7fa 0%,
+    #eef2f7 100%
+  );
+  border-right: 1px solid #e0e0e0;
+  padding: 24px 16px;
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.06);
+}
+
+.layout-container {
+  height: 100vh;
+}
+
+mat-sidenav-content {
+  background: #f1f5f9;   /* admin background */
+}
+
+

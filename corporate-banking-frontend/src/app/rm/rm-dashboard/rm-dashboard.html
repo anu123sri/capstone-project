@@ -1,0 +1,45 @@
+<div class="rm-dashboard">
+
+  <h2 class="rm-title">Relationship Manager Dashboard</h2>
+
+  <div class="rm-actions">
+
+    <!-- CREATE CLIENT -->
+    <mat-card class="rm-card">
+      <h3>Create Client</h3>
+      <p>Onboard a new corporate client</p>
+     <button mat-raised-button color="primary" routerLink="/rm/clients/create">
+  Create Client
+</button>
+
+    </mat-card>
+
+    <!-- VIEW CLIENTS -->
+    <mat-card class="rm-card">
+      <h3>View Clients</h3>
+      <p>See all clients assigned to you</p>
+      <button mat-raised-button color="primary" routerLink="/rm/clients">
+        View Clients
+      </button>
+    </mat-card>
+
+    <!-- CREATE CREDIT -->
+    <mat-card class="rm-card">
+      <h3>Create Credit Request</h3>
+      <p>Submit a new credit request</p>
+      <button mat-raised-button color="primary" routerLink="/rm/credit-request">
+        Create Credit
+      </button>
+    </mat-card>
+
+    <!-- VIEW CREDITS -->
+    <mat-card class="rm-card">
+      <h3>View Credit Requests</h3>
+      <p>Track submitted credit requests</p>
+      <button mat-raised-button color="accent" routerLink="/rm/credits">
+        View Credit Requests
+      </button>
+    </mat-card>
+
+  </div>
+</div>

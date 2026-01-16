@@ -1,0 +1,161 @@
+/* Page */
+.page-container {
+  padding: 24px;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* Title */
+.page-title-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.page-title-pill {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  padding: 12px 36px;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Client ID */
+.client-id {
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+/* Details */
+.details div {
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.details span {
+  font-weight: 600;
+}
+
+/* Status */
+.status-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 14px 0;
+}
+
+.status-pill {
+  padding: 6px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.PENDING {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.APPROVED {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.REJECTED {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.actions button {
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.approve {
+  background: #16a34a;
+  color: white;
+}
+
+.reject {
+  background: #dc2626;
+  color: white;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  padding: 22px;
+  width: 340px;
+  border-radius: 12px;
+}
+
+textarea {
+  width: 100%;
+  height: 90px;
+  margin: 12px 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancel {
+  background: #6b7280;
+  color: white;
+}
+
+/* Misc */
+.loading, .empty {
+  text-align: center;
+  margin-top: 40px;
+  font-weight: 500;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}

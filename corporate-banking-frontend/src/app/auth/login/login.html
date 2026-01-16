@@ -1,0 +1,80 @@
+<div class="header">
+  <div class="header-left">
+    <mat-icon class="bank-icon">account_balance</mat-icon>
+    <span>Corporate Banking</span>
+  </div>
+
+  <div class="header-right">
+    <mat-icon>notifications</mat-icon>
+    <mat-icon>help_outline</mat-icon>
+    <mat-icon>account_circle</mat-icon>
+  </div>
+</div>
+
+
+<!-- MAIN LOGIN AREA -->
+<div class="login-container">
+
+  <div class="login-card">
+
+    <h1 class="title">
+      Corporate Banking Client & Credit Management System
+    </h1>
+
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-icon matPrefix>person</mat-icon>
+    <mat-label>Username</mat-label>
+    <input
+      matInput
+      [(ngModel)]="username"
+      name="username"
+      required
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-icon matPrefix>lock</mat-icon>
+    <mat-label>Password</mat-label>
+    <input
+      matInput
+      type="password"
+      [(ngModel)]="password"
+      name="password"
+      required
+    />
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="login-btn"
+    type="submit"
+    [disabled]="loginForm.invalid"
+  >
+    Login
+  </button>
+
+</form>
+
+
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-left">
+    © 2026 Corporate Banking. All rights reserved.
+  </div>
+
+  <div class="footer-right">
+    <span>Helpdesk</span>
+    <span>|</span>
+    <span>24x7 Support</span>
+    <span>|</span>
+    <span>Contact Us</span>
+  </div>
+</div>
+

@@ -1,0 +1,102 @@
+/* ================= PAGE ================= */
+.credits-page {
+  padding: 40px 32px 32px;   /* 👈 pushes content DOWN */
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+
+/* ================= TITLE WRAPPER ================= */
+.page-title-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0 36px;   /* 👈 vertical spacing */
+}
+
+/* ================= TITLE PILL ================= */
+.page-title-pill {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  padding: 14px 36px;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+}
+
+/* ================= GRID ================= */
+.credits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 26px;
+}
+
+/* ================= CARD ================= */
+.credit-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #2563eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.credit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= ROWS ================= */
+.row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+}
+
+/* ================= STATUS ================= */
+.status-pill {
+  position: relative;
+  height: 30px;
+  border-radius: 999px;
+  margin-top: 14px;
+
+  display: flex;
+  align-items: center;        /* vertical center */
+  justify-content: center;    /* horizontal center */
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* APPROVED */
+.status-approved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* PENDING */
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* REJECTED */
+.status-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}

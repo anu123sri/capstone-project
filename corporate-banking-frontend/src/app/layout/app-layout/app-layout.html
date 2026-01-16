@@ -1,0 +1,34 @@
+<mat-sidenav-container class="layout-container">
+
+  <mat-sidenav mode="side" opened class="sidenav">
+    <h3 class="logo">Corporate Bank</h3>
+
+    <a mat-button routerLink="/admin"
+       *ngIf="role === 'ROLE_ADMIN'">
+      <mat-icon>admin_panel_settings</mat-icon>
+      Admin Dashboard
+    </a>
+
+    <a mat-button routerLink="/rm"
+       *ngIf="role === 'ROLE_RELATIONSHIP_MANAGER'">
+      <mat-icon>groups</mat-icon>
+      RM Dashboard
+    </a>
+
+    <a mat-button routerLink="/analyst"
+       *ngIf="role === 'ROLE_ANALYST'">
+      <mat-icon>analytics</mat-icon>
+      Analyst Dashboard
+    </a>
+
+    <button mat-button color="warn" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

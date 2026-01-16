@@ -1,0 +1,132 @@
+<div class="admin-container">
+
+  <!-- CREATE USER -->
+  <mat-card class="create-user-card">
+    <mat-card-title>Create User</mat-card-title>
+
+    <form (ngSubmit)="createUser()" #userForm="ngForm">
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput [(ngModel)]="newUser.username" name="username" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" [(ngModel)]="newUser.email" name="email" required />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          [type]="hidePassword ? 'password' : 'text'"
+          [(ngModel)]="newUser.password"
+          name="password"
+          required />
+
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="hidePassword = !hidePassword">
+          <mat-icon>
+            {{ hidePassword ? 'visibility_off' : 'visibility' }}
+          </mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Role</mat-label>
+        <mat-select [(ngModel)]="newUser.role" name="role" required>
+          <mat-option value="RELATIONSHIP_MANAGER">Relationship Manager</mat-option>
+          <mat-option value="ANALYST">Analyst</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit" class="create-btn">
+        Create User
+      </button>
+
+    </form>
+  </mat-card>
+
+  <!-- USER LIST -->
+  <mat-card class="users-card">
+    <mat-card-title>User Details</mat-card-title>
+
+    <div class="user-grid">
+
+     <div
+  class="user-container user-card"
+  [ngClass]="{
+    'admin': user.role === 'ADMIN',
+    'analyst': user.role === 'ANALYST',
+    'rm': user.role === 'RELATIONSHIP_MANAGER'
+  }"
+  *ngFor="let user of users"
+>
+    <!-- USER HEADER -->
+<div class="user-header">
+  <mat-icon class="user-avatar">account_circle</mat-icon>
+</div>
+
+<table class="user-table">
+
+  <tr>
+    <td class="label">
+      <mat-icon class="row-icon">person</mat-icon>
+      Username
+    </td>
+    <td>{{ user.username }}</td>
+  </tr>
+
+  <tr>
+    <td class="label">
+      <mat-icon class="row-icon">email</mat-icon>
+      Email
+    </td>
+    <td>{{ user.email }}</td>
+  </tr>
+
+  <tr>
+    <td class="label">
+      <mat-icon class="row-icon">badge</mat-icon>
+      Role
+    </td>
+    <td>
+      <span
+        class="role-badge"
+        [ngClass]="{
+          'role-admin': user.role === 'ADMIN',
+          'role-analyst': user.role === 'ANALYST',
+          'role-rm': user.role === 'RELATIONSHIP_MANAGER'
+        }"
+      >
+        {{ user.role }}
+      </span>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="label">
+      <mat-icon class="row-icon">toggle_on</mat-icon>
+      Active
+    </td>
+    <td>
+      <mat-slide-toggle
+        [checked]="user.active"
+        [ngClass]="user.active ? 'toggle-active' : 'toggle-inactive'"
+        (change)="toggleStatus(user)">
+      </mat-slide-toggle>
+    </td>
+  </tr>
+
+</table>
+     
+      </div>
+
+    </div>
+  </mat-card>
+
+</div>

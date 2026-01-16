@@ -1,0 +1,59 @@
+<div class="credits-page">
+
+  <div class="page-title-wrapper">
+    <div class="page-title-pill">
+      Credit Requests
+    </div>
+  </div>
+
+
+<!-- LOADING -->
+<div *ngIf="loading">
+  Loading...
+</div>
+
+<!-- ERROR -->
+<div *ngIf="!loading && error">
+  {{ error }}
+</div>
+
+<!-- DATA -->
+<div *ngIf="!loading && credits.length > 0" class="credits-grid">
+
+  <mat-card
+    class="credit-card"
+    *ngFor="let c of credits"
+    [ngClass]="{
+      'approved': c.status === 'APPROVED',
+      'pending': c.status === 'PENDING',
+      'rejected': c.status === 'REJECTED'
+    }"
+  >
+
+    <h3>Client ID: {{ c.clientId }}</h3>
+
+    <p><b>Amount:</b> {{ c.requestAmount }}</p>
+    <p><b>Tenure:</b> {{ c.tenureMonths }} months</p>
+    <p><b>Purpose:</b> {{ c.purpose }}</p>
+
+    <!-- ✅ STATUS BADGE -->
+   <div
+  class="status-pill"
+  [ngClass]="{
+    'status-approved': c.status === 'APPROVED',
+    'status-pending': c.status === 'PENDING',
+    'status-rejected': c.status === 'REJECTED'
+  }"
+>
+  {{ c.status }}
+</div>
+
+
+  </mat-card>
+
+</div>
+
+<!-- NO DATA -->
+<div *ngIf="!loading && credits.length === 0">
+  No credit requests found.
+</div>
