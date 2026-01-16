@@ -28,6 +28,8 @@ export class LoginComponent {
 
   username = '';
   password = '';
+  isLoading = false;
+  errorMessage = '';
 
   constructor(
     private authService: AuthService,
@@ -35,6 +37,14 @@ export class LoginComponent {
   ) {}
 
   onLogin() {
+    if (!this.username || !this.password) {
+      this.errorMessage = 'Please enter both username and password';
+      return;
+    }
+
+    this.isLoading = true;
+    this.errorMessage = '';
+
     this.authService.login(this.username, this.password).subscribe({
       next: (res) => {
         this.authService.saveToken(res.token);
@@ -48,10 +58,15 @@ export class LoginComponent {
         } else if (role === 'ROLE_ANALYST') {
           this.router.navigate(['/analyst/credits']);
         } else {
-          alert('Unknown role');
+          this.errorMessage = 'Unknown user role';
         }
+        this.isLoading = false;
       },
-      error: () => alert('Invalid username or password')
+      error: (err) => {
+        this.isLoading = false;
+        this.errorMessage = 'Invalid username or password';
+        console.error('Login error:', err);
+      }
     });
   }
 }

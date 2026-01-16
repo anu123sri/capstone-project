@@ -51,10 +51,16 @@
     color="primary"
     class="login-btn"
     type="submit"
-    [disabled]="loginForm.invalid"
+    [disabled]="loginForm.invalid || isLoading"
   >
-    Login
+    <span *ngIf="!isLoading">Login</span>
+    <span *ngIf="isLoading">Logging in...</span>
   </button>
+
+  <!-- Error Message Display -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
 
 </form>
 

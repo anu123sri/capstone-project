@@ -108,3 +108,15 @@
   padding: 10px;
   font-size: 16px;
 }
+
+/* Error message styling */
+.error-message {
+  margin-top: 16px;
+  padding: 12px;
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef5350;
+  border-radius: 6px;
+  font-size: 14px;
+  text-align: center;
+}
